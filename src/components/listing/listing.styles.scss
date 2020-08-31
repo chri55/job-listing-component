@@ -1,0 +1,171 @@
+hr {
+  display: none;
+}
+
+.listing {
+  width: 80%;
+  border-radius: 5px;
+  background-color: white;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 30px;
+  margin: 10px auto;
+  -webkit-box-shadow: 0px 15px 40px -30px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 15px 40px -30px rgba(0,0,0,0.75);
+  box-shadow: 0px 15px 40px -30px rgba(0,0,0,0.75);
+
+  &.featured-upper {
+    border-left: 5px solid hsl(180, 29%, 50%);
+  }
+}
+
+.inner-row {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 5px 0;
+  align-items: baseline;
+  
+  .company {
+    color: hsl(180, 29%, 50%);
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  .position {
+    font-weight: bold;
+    color: hsl(180, 14%, 20%);
+    cursor: pointer;
+
+    &:hover {
+      color: hsl(180, 29%, 50%);
+    }
+  }
+
+  .meta,
+  .spacer {
+    color: hsl(180, 8%, 52%);
+    padding:0 3px;
+    font-size: 14px;
+  }
+
+  .new,
+  .featured {
+    margin: 0 5px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 10px;
+    height: 20px;
+    width: auto;
+    padding: 5px;
+
+    span {
+      font-size: 10px;
+      font-weight: 700;
+      color: hsl(180, 52%, 96%);
+    }
+  }
+
+  .new {
+    background-color: hsl(180, 29%, 50%);
+  }
+
+  .featured {
+    background-color: hsl(180, 14%, 20%);
+  }
+}
+
+.row {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &.top {
+    height: 100%;
+  }
+
+  &.bottom {
+    margin-left: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: flex-start;
+    max-width: 40%;
+
+    .tag {
+      font-weight: 700;
+      font-size: 12px;
+      background-color: hsl(180, 31%, 95%);
+      color: hsl(180, 29%, 50%);
+      margin: 5px 5px;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: hsl(180, 29%, 50%);
+        color: hsl(180, 52%, 96%);
+      }
+
+    }
+
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .listing {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  hr {
+    display: block;
+    width: 100%;
+  }
+  .listing {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .top {
+    height: 0;
+    width: 0;
+    position: absolute;
+
+    .icon {
+      position: relative;
+      padding: 0;
+      margin: 0;
+      height: 40px;
+      width: 40px;
+      top: -40px;
+    }
+  }
+
+  .row {
+    &.bottom {
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin: 0;
+    }
+  }
+
+  .inner-row {
+    .meta {
+      font-size: 10px;
+    }
+  }
+
+
+}
